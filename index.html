@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brandhon Oropeza — CX & Product Strategy Director</title>
+<meta name="description" content="Customer Experience & Product Strategy Director. 10+ years at the intersection of CX, Product, and Data." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-raised: #121212;
+    --bg-card: #161616;
+    --border: #242424;
+    --border-bright: #3a3a3a;
+    --text: #f2ede4;
+    --text-muted: #a39e94;
+    --text-dim: #5c5850;
+    --accent: #e89e5c;
+    --accent-bright: #f2b37a;
+    --accent-dim: #8a5a2f;
+    --accent-soft: rgba(232, 158, 92, 0.12);
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+    --max-width: 1360px;
+    --content-width: 1080px;
+    --gutter: clamp(1.5rem, 4vw, 4rem);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  /* ===== Noise overlay for editorial depth ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* ===== Language swap ===== */
+  .lang-en .lang-es-only { display: none !important; }
+  .lang-es .lang-en-only { display: none !important; }
+
+  /* ===== Typography base ===== */
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+
+  p { color: var(--text-muted); }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* ===== Layout helpers ===== */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    position: relative;
+    z-index: 2;
+  }
+
+  .content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  section { padding: clamp(4rem, 10vw, 8rem) 0; position: relative; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .section-title em { color: var(--accent); font-style: normal; }
+
+  /* ===== Navigation ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem var(--gutter);
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  nav.scrolled { border-bottom-color: var(--border); }
+
+  nav .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .brand {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  nav .brand span { color: var(--accent); font-style: italic; }
+
+  nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  nav .nav-links a {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  nav .nav-links a:hover { color: var(--text); }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-bright);
+    border-radius: 999px;
+    padding: 2px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  .lang-toggle button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.35rem 0.8rem;
+    cursor: pointer;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+  }
+
+  @media (max-width: 720px) {
+    nav .nav-links a:not(.lang-toggle-wrap) { display: none; }
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    right: -10%;
+    top: 10%;
+    width: 70%;
+    height: 80%;
+    background: radial-gradient(circle at center, var(--accent-soft) 0%, transparent 60%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 11vw, 9rem);
+    font-weight: 300;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+  }
+
+  .hero h1 .italic {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .hero .tagline {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    color: var(--text-muted);
+    max-width: 38ch;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    max-width: 800px;
+  }
+
+  .hero-meta div strong {
+    color: var(--text);
+    font-weight: 500;
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  /* ===== About ===== */
+  .about {
+    background: var(--bg-raised);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text {
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    line-height: 1.5;
+    font-weight: 300;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .about-text span.accent { color: var(--accent); font-style: normal; font-weight: 400; }
+
+  @media (max-width: 820px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* ===== Expertise grid ===== */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .expertise-card {
+    background: var(--bg);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s ease;
+  }
+
+  .expertise-card:hover { background: var(--bg-card); }
+
+  .expertise-card .num {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .expertise-card ul {
+    list-style: none;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .expertise-card ul li::before {
+    content: '·';
+    color: var(--accent);
+    margin-right: 0.5rem;
+  }
+
+  /* ===== Work / Case Studies ===== */
+  .case {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case:last-child { border-bottom: none; }
+
+  .case-header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+  }
+
+  .case-index {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--accent);
+  }
+
+  .case-index div { color: var(--text-dim); margin-top: 0.5rem; font-size: 0.75rem; }
+
+  .case-title {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .case-title em { color: var(--accent); }
+
+  .case-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .case-body {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @media (max-width: 900px) {
+    .case-header, .case-body { grid-template-columns: 1fr; gap: 1.5rem; }
+    .case-index { border-top: none; padding-top: 0; }
+  }
+
+  .case-block h4 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .case-block p, .case-block li {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .case-block ul { list-style: none; padding: 0; }
+
+  .case-block ul li {
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .case-block ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* Impact stats */
+  .impact-stats {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  .stat {
+    background: var(--bg);
+    padding: 2rem 1.5rem;
+    transition: background 0.3s;
+  }
+
+  .stat:hover { background: var(--bg-card); }
+
+  .stat .stat-num {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .stat .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* Tags */
+  .tags {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--border-bright);
+    border-radius: 999px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Visual placeholder */
+  .case-visual {
+    grid-column: 1 / -1;
+    margin-top: 3rem;
+    aspect-ratio: 16/7;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-image:
+      linear-gradient(45deg, var(--border) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--border) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--border) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--border) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+
+  .case-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .case-visual .placeholder {
+    position: relative;
+    z-index: 2;
+    background: var(--bg);
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  /* Sub-cases for Mescalina */
+  .subcases {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .subcase {
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: border-color 0.3s;
+  }
+
+  .subcase:hover { border-color: var(--accent-dim); }
+
+  .subcase h5 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+
+  .subcase .industry {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .subcase p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.55;
+  }
+
+  .subcase .result {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    letter-spacing: 0.02em;
+  }
+
+  .subcase .result strong { color: var(--accent); font-weight: 500; }
+
+  /* ===== Compact projects ===== */
+  .compact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .compact-card {
+    background: var(--bg);
+    padding: 2.5rem 2rem;
+  }
+
+  .compact-card .compact-meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .compact-card h3 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .compact-card .subtitle {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .compact-card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .compact-card ul li {
+    padding: 0.35rem 0;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    position: relative;
+    padding-left: 1.2rem;
+  }
+
+  .compact-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .compact-card ul li strong { color: var(--accent); font-weight: 500; }
+
+  @media (max-width: 820px) { .compact-grid { grid-template-columns: 1fr; } }
+
+  /* ===== Ventures ===== */
+  .ventures {
+    background: var(--bg-raised);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .venture {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .venture:last-child { border-bottom: none; }
+
+  @media (max-width: 820px) {
+    .venture { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  .venture-left h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .venture-left .venture-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .venture-left .venture-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .venture-right p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .venture-right .frameworks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .venture-right .frameworks .tag { border-color: var(--accent-dim); }
+
+  /* ===== Timeline ===== */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+    transition: background 0.2s;
+  }
+
+  .tl-item:hover { background: var(--bg-raised); }
+
+  .tl-item:last-child { border-bottom: none; }
+
+  .tl-item .tl-date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tl-item .tl-role {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text);
+  }
+
+  .tl-item .tl-role span {
+    font-family: var(--font-body);
+    font-style: normal;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .tl-item .tl-org {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+
+  @media (max-width: 820px) {
+    .tl-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .tl-item .tl-org { text-align: left; }
+  }
+
+  /* ===== Capabilities ===== */
+  .capabilities {
+    background: var(--bg-raised);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .cap {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-bright);
+  }
+
+  .cap .cap-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .cap h4 {
+    font-size: 1.35rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+  }
+
+  .cap p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* ===== Contact ===== */
+  .contact {
+    padding: clamp(5rem, 12vw, 10rem) 0;
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    font-style: italic;
+    line-height: 1;
+  }
+
+  .contact h2 em { color: var(--accent); }
+
+  .contact-email {
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+    color: var(--text);
+    font-family: var(--font-display);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.3rem;
+    display: inline-block;
+    margin-bottom: 3rem;
+    transition: color 0.2s;
+  }
+
+  .contact-email:hover { color: var(--accent); }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 3rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .contact-links a:hover { color: var(--accent); }
+
+  footer {
+    padding: 2rem var(--gutter);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ===== Reveal animation ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== NAV ================== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">Brandhon <span>Oropeza</span></a>
+    <div class="nav-links">
+      <a href="#work" class="lang-en-only">Work</a>
+      <a href="#work" class="lang-es-only">Proyectos</a>
+      <a href="#ventures" class="lang-en-only">Ventures</a>
+      <a href="#ventures" class="lang-es-only">Ventures</a>
+      <a href="#experience" class="lang-en-only">Experience</a>
+      <a href="#experience" class="lang-es-only">Experiencia</a>
+      <a href="#contact" class="lang-en-only">Contact</a>
+      <a href="#contact" class="lang-es-only">Contacto</a>
+      <span class="lang-toggle">
+        <button id="btn-en" class="active">EN</button>
+        <button id="btn-es">ES</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<!-- ================== HERO ================== -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="content">
+      <div class="hero-label">
+        <span class="lang-en-only">Customer Experience &nbsp;·&nbsp; Product Strategy Director</span>
+        <span class="lang-es-only">Customer Experience &nbsp;·&nbsp; Product Strategy Director</span>
+      </div>
+      <h1>
+        Brandhon<br/>
+        <span class="italic">Oropeza.</span>
+      </h1>
+      <p class="tagline lang-en-only">
+        I design customer-centric strategies at the intersection of CX, Product, and Data — turning consumer behavior into business outcomes.
+      </p>
+      <p class="tagline lang-es-only">
+        Diseño estrategias customer-centric en la intersección de CX, Producto y Data — convirtiendo el comportamiento del consumidor en resultados de negocio.
+      </p>
+      <div class="hero-meta">
+        <div>
+          <span class="lang-en-only">Based in</span>
+          <span class="lang-es-only">Ubicación</span>
+          <strong>CDMX, Mexico</strong>
+        </div>
+        <div>
+          <span class="lang-en-only">Experience</span>
+          <span class="lang-es-only">Experiencia</span>
+          <strong class="lang-en-only">10+ years</strong>
+          <strong class="lang-es-only">10+ años</strong>
+        </div>
+        <div>
+          <span class="lang-en-only">Currently</span>
+          <span class="lang-es-only">Actualmente</span>
+          <strong>CX Director @ Mescalina</strong>
+        </div>
+        <div>
+          <span class="lang-en-only">Languages</span>
+          <span class="lang-es-only">Idiomas</span>
+          <strong class="lang-en-only">Spanish · English</strong>
+          <strong class="lang-es-only">Español · Inglés</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================== ABOUT ================== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="content">
+      <div class="section-label">
+        <span class="lang-en-only">01 / About</span>
+        <span class="lang-es-only">01 / Sobre mí</span>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p class="mono" style="color:var(--text-dim);line-height:1.8;">
+            <span class="lang-en-only">10+ years · 6 industries · 1 obsession: turning understanding into outcomes.</span>
+            <span class="lang-es-only">10+ años · 6 industrias · 1 obsesión: convertir entendimiento en resultados.</span>
+          </p>
+        </div>
+        <div class="about-text">
+          <span class="lang-en-only">
+            I work where <span class="accent">research meets roadmap</span>, where <span class="accent">data meets design</span>, and where strategy meets execution. I've built loyalty programs from concept to economics, defined digital products from zero, implemented CDPs hands-on, invented consumer-understanding methodologies, and led teams across fintech, foodtech, insurance, retail, eCommerce and global CPG.
+          </span>
+          <span class="lang-es-only">
+            Trabajo donde <span class="accent">el research se encuentra con el roadmap</span>, donde <span class="accent">la data se encuentra con el diseño</span>, y donde la estrategia se encuentra con la ejecución. He construido programas de lealtad desde el concepto hasta la economía, definido productos digitales desde cero, implementado CDPs hands-on, inventado metodologías para entender al consumidor, y liderado equipos en fintech, foodtech, seguros, retail, eCommerce y CPG global.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== EXPERTISE ================== -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-en-only">02 / Core Expertise</span>
+      <span class="lang-es-only">02 / Áreas de expertise</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-en-only">Six disciplines, <em>one way of working</em>.</span>
+      <span class="lang-es-only">Seis disciplinas, <em>una forma de trabajar</em>.</span>
+    </h2>
+
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="num">01</div>
+        <h3>CX &amp; Strategy</h3>
+        <ul class="lang-en-only">
+          <li>Customer Journey Mapping</li>
+          <li>Service Design &amp; Blueprinting</li>
+          <li>CX Metrics · NPS · CSAT · CES</li>
+          <li>Omnichannel Strategy</li>
+          <li>Loyalty Program Design</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li>Customer Journey Mapping</li>
+          <li>Service Design &amp; Blueprinting</li>
+          <li>Métricas CX · NPS · CSAT · CES</li>
+          <li>Estrategia Omnichannel</li>
+          <li>Diseño de Programas de Lealtad</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card">
+        <div class="num">02</div>
+        <h3 class="lang-en-only">Product Definition</h3>
+        <h3 class="lang-es-only">Definición de Producto</h3>
+        <ul class="lang-en-only">
+          <li>Product Discovery &amp; Roadmapping</li>
+          <li>User Stories &amp; Acceptance Criteria</li>
+          <li>Tech Stack Decision Frameworks</li>
+          <li>Fintech · Foodtech · Insurance apps</li>
+          <li>Building apps from zero</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li>Product Discovery &amp; Roadmapping</li>
+          <li>User Stories &amp; Criterios de Aceptación</li>
+          <li>Decisión de Stack Tecnológico</li>
+          <li>Apps Fintech · Foodtech · Seguros</li>
+          <li>Definición de productos desde cero</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card">
+        <div class="num">03</div>
+        <h3 class="lang-en-only">Data &amp; Intelligence</h3>
+        <h3 class="lang-es-only">Data e Inteligencia</h3>
+        <ul class="lang-en-only">
+          <li>Consumer Insights &amp; Segmentation</li>
+          <li>Social Listening · Share of Voice</li>
+          <li>CDP Strategy &amp; Implementation</li>
+          <li>Data Storytelling · Dashboards</li>
+          <li>Proprietary Methodologies</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li>Consumer Insights &amp; Segmentación</li>
+          <li>Social Listening · Share of Voice</li>
+          <li>Estrategia e Implementación de CDP</li>
+          <li>Data Storytelling · Dashboards</li>
+          <li>Metodologías Propietarias</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card">
+        <div class="num">04</div>
+        <h3 class="lang-en-only">UX / UI / Design</h3>
+        <h3 class="lang-es-only">UX / UI / Diseño</h3>
+        <ul class="lang-en-only">
+          <li>Figma (expert-level)</li>
+          <li>UX Research &amp; Testing</li>
+          <li>Information Architecture</li>
+          <li>Design Systems</li>
+          <li>Wireframing · Prototyping</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li>Figma (nivel experto)</li>
+          <li>UX Research &amp; Testing</li>
+          <li>Arquitectura de Información</li>
+          <li>Design Systems</li>
+          <li>Wireframing · Prototipado</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card">
+        <div class="num">05</div>
+        <h3 class="lang-en-only">Technology Stack</h3>
+        <h3 class="lang-es-only">Stack Tecnológico</h3>
+        <ul>
+          <li>Salesforce (MC · Service · Sales)</li>
+          <li>Adobe Experience Manager</li>
+          <li>Sprinklr · Epsilon · n8n</li>
+          <li>CDP · DMP · Martech</li>
+          <li>AI-powered CX &amp; Automation</li>
+        </ul>
+      </div>
+
+      <div class="expertise-card">
+        <div class="num">06</div>
+        <h3 class="lang-en-only">Leadership</h3>
+        <h3 class="lang-es-only">Liderazgo</h3>
+        <ul class="lang-en-only">
+          <li>Cross-functional Team Leadership</li>
+          <li>C-Level Stakeholder Management</li>
+          <li>Workshop Facilitation</li>
+          <li>Innovation Coaching</li>
+          <li>Client Strategy (Enterprise)</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li>Liderazgo de Equipos Cross-functional</li>
+          <li>Stakeholder Management C-Level</li>
+          <li>Facilitación de Workshops</li>
+          <li>Innovation Coaching</li>
+          <li>Estrategia Cliente (Enterprise)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== WORK ================== -->
+<section id="work" style="padding-top:2rem;">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-en-only">03 / Selected Work</span>
+      <span class="lang-es-only">03 / Trabajo seleccionado</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-en-only">Case studies where <em>strategy met execution</em>.</span>
+      <span class="lang-es-only">Proyectos donde <em>la estrategia se encontró con la ejecución</em>.</span>
+    </h2>
+  </div>
+
+  <!-- ========== CASE 1: JOIN THE PLANET ========== -->
+  <div class="container">
+    <div class="case">
+      <div class="case-header">
+        <div class="case-index">
+          2023 — 2025
+          <div>CASE STUDY 01</div>
+        </div>
+        <div>
+          <div class="case-subtitle">Join The Planet &nbsp;·&nbsp; eCommerce &amp; Digital Experience</div>
+          <h3 class="case-title lang-en-only">A <em>digital legacy</em>, delivered globally.</h3>
+          <h3 class="case-title lang-es-only">Un <em>legado digital</em>, entregado globalmente.</h3>
+        </div>
+      </div>
+
+      <div class="case-visual">
+        <span class="placeholder">./assets/projects/join-the-planet.jpg</span>
+      </div>
+
+      <div class="case-body" style="margin-top:3rem;">
+        <div></div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">Context &amp; Challenge</h4>
+          <h4 class="lang-es-only">Contexto y reto</h4>
+          <p class="lang-en-only">A collectible ornamental boot — 10,000 units worldwide — designed with Lionel Messi, built from recycled ocean plastics, and certified on-chain. A mix of physical product, NFT, and sustainability narrative, launching simultaneously across 120+ countries.</p>
+          <p class="lang-en-only">The challenge: deliver a proactive post-sale experience at global scale, for a launch where conversion and perceived value had to match the ambition of the story.</p>
+          <p class="lang-es-only">Un coleccionable ornamental — 10,000 unidades en todo el mundo — diseñado con Lionel Messi, fabricado con plásticos oceánicos reciclados y certificado en blockchain. Una mezcla de producto físico, NFT y narrativa de sostenibilidad, lanzado simultáneamente en 120+ países.</p>
+          <p class="lang-es-only">El reto: entregar una experiencia post-venta proactiva a escala global, para un lanzamiento donde la conversión y el valor percibido debían estar a la altura de la historia.</p>
+        </div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">What I did</h4>
+          <h4 class="lang-es-only">Lo que hice</h4>
+          <ul class="lang-en-only">
+            <li>Designed the omnichannel CX strategy with AI-driven digital support</li>
+            <li>Led UX/UI for the eCommerce site and companion app</li>
+            <li>Built a proactive post-sale journey: delivery, unboxing, product activation, NFT certification</li>
+            <li>Integrated data analytics &amp; feedback loops into the CX strategy</li>
+            <li>Anticipated pain points before they surfaced — preventive experience management</li>
+          </ul>
+          <ul class="lang-es-only">
+            <li>Diseñé la estrategia CX omnichannel con soporte digital AI-driven</li>
+            <li>Lideré UX/UI del eCommerce y la app companion</li>
+            <li>Construí el journey proactivo post-venta: entrega, unboxing, activación, certificación NFT</li>
+            <li>Integré analytics y feedback loops en la estrategia CX</li>
+            <li>Anticipé pain points antes de que ocurrieran — experience management preventivo</li>
+          </ul>
+        </div>
+
+        <div class="impact-stats">
+          <div class="stat"><div class="stat-num">423M</div><div class="stat-label lang-en-only">Global impressions</div><div class="stat-label lang-es-only">Impresiones globales</div></div>
+          <div class="stat"><div class="stat-num">1.4M</div><div class="stat-label lang-en-only">Web visits</div><div class="stat-label lang-es-only">Visitas web</div></div>
+          <div class="stat"><div class="stat-num">88K</div><div class="stat-label lang-en-only">Active users</div><div class="stat-label lang-es-only">Usuarios activos</div></div>
+          <div class="stat"><div class="stat-num">10K</div><div class="stat-label lang-en-only">NFT certificates</div><div class="stat-label lang-es-only">Certificados NFT</div></div>
+          <div class="stat"><div class="stat-num">120</div><div class="stat-label lang-en-only">Countries reached</div><div class="stat-label lang-es-only">Países alcanzados</div></div>
+          <div class="stat"><div class="stat-num">37%</div><div class="stat-label lang-en-only">Add-to-cart conversion</div><div class="stat-label lang-es-only">Conversión add-to-cart</div></div>
+          <div class="stat"><div class="stat-num">563K</div><div class="stat-label lang-en-only">OOH impacts</div><div class="stat-label lang-es-only">Impactos OOH</div></div>
+          <div class="stat"><div class="stat-num">$1M+</div><div class="stat-label lang-en-only">Projected value</div><div class="stat-label lang-es-only">Valor proyectado</div></div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Omnichannel CX</span>
+          <span class="tag">AI Automation</span>
+          <span class="tag">eCommerce</span>
+          <span class="tag">Product Definition</span>
+          <span class="tag">UX / UI</span>
+          <span class="tag">Post-Sale Service Design</span>
+          <span class="tag">Global Launch</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CASE 2: FINDASENSE ========== -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-index">
+          2021 — 2024
+          <div>CASE STUDY 02</div>
+        </div>
+        <div>
+          <div class="case-subtitle lang-en-only">Findasense &nbsp;·&nbsp; Global CPG Leader (Top-3 Baked Goods Worldwide)</div>
+          <div class="case-subtitle lang-es-only">Findasense &nbsp;·&nbsp; Global CPG Leader (Top-3 Baked Goods a nivel mundial)</div>
+          <h3 class="case-title lang-en-only">From <em>social noise</em> to product innovation.</h3>
+          <h3 class="case-title lang-es-only">Del <em>ruido social</em> a la innovación de producto.</h3>
+        </div>
+      </div>
+
+      <div class="case-visual">
+        <span class="placeholder">./assets/projects/findasense.jpg</span>
+      </div>
+
+      <div class="case-body" style="margin-top:3rem;">
+        <div></div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">Context &amp; Challenge</h4>
+          <h4 class="lang-es-only">Contexto y reto</h4>
+          <p class="lang-en-only">A global CPG leader in baked goods — operating across dozens of markets — needed to evolve how it understood and acted on consumer behavior. Sentiment charts and scattered listening reports weren't moving product decisions.</p>
+          <p class="lang-en-only">The mandate: unify social listening, surveys, and custom research into a single, living view of the consumer — one that could trigger real product and marketing decisions.</p>
+          <p class="lang-es-only">Un líder global de CPG en panificación — operando en decenas de mercados — necesitaba evolucionar la forma en que entendía y actuaba sobre el comportamiento del consumidor. Los gráficos de sentiment y los reportes de listening dispersos no movían decisiones de producto.</p>
+          <p class="lang-es-only">El mandato: unificar social listening, encuestas y custom research en una visión única y viva del consumidor — una que pudiera gatillar decisiones reales de producto y marketing.</p>
+        </div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">What I did</h4>
+          <h4 class="lang-es-only">Lo que hice</h4>
+          <ul class="lang-en-only">
+            <li>Evolved social listening from sentiment charts to deep behavioral categorization</li>
+            <li>Built Share of Market, Share of Search &amp; Share of Voice reporting with numeric &amp; weighted distribution</li>
+            <li>Led business case for CDP implementation (with Mariano Ruso &amp; Facundo Castro)</li>
+            <li>Designed an end-to-end loyalty program — mechanics, economics, tiers</li>
+            <li>Invented proprietary methodologies: <em>Total Listening</em>, <em>Digital Journey Map</em>, <em>Triggers &amp; Barriers</em></li>
+            <li>Built automated insight dashboards for global stakeholders</li>
+          </ul>
+          <ul class="lang-es-only">
+            <li>Evolucioné el social listening de gráficos de sentiment a categorización conductual profunda</li>
+            <li>Construí reportes de Share of Market, Share of Search &amp; Share of Voice con distribución numérica y ponderada</li>
+            <li>Lideré el business case para implementar un CDP (con Mariano Ruso y Facundo Castro)</li>
+            <li>Diseñé un programa de lealtad end-to-end — mecánicas, economía, tiers</li>
+            <li>Inventé metodologías propietarias: <em>Total Listening</em>, <em>Digital Journey Map</em>, <em>Triggers &amp; Barriers</em></li>
+            <li>Construí dashboards automatizados de insights para stakeholders globales</li>
+          </ul>
+        </div>
+
+        <!-- Business impact cases -->
+        <div class="subcases">
+          <div class="subcase">
+            <div class="industry lang-en-only">New Product · Viral Launch</div>
+            <div class="industry lang-es-only">Nuevo Producto · Lanzamiento Viral</div>
+            <h5>Cruapan</h5>
+            <p class="lang-en-only">Cross-referencing social listening, surveys and custom research revealed an overlap between croissant lovers and sandwich consumers. A business case became a product — <em>Cruapan</em>, the bread × croissant hybrid. Viral success.</p>
+            <p class="lang-es-only">La interpolación de social listening, encuestas y custom research reveló un traslape entre amantes de croissant y consumidores de sandwich. El business case se convirtió en producto — <em>Cruapan</em>, el híbrido pan × croissant. Éxito viral.</p>
+            <div class="result lang-en-only">Result: <strong>viral launch</strong>, new SKU born from consumer insight</div>
+            <div class="result lang-es-only">Resultado: <strong>lanzamiento viral</strong>, SKU nuevo nacido de insight del consumidor</div>
+          </div>
+
+          <div class="subcase">
+            <div class="industry lang-en-only">Category Bundle · Retail</div>
+            <div class="industry lang-es-only">Bundle de Categoría · Retail</div>
+            <h5 class="lang-en-only">Hot Dog Toppings Bundle</h5>
+            <h5 class="lang-es-only">Bundle de Toppings para Hot Dog</h5>
+            <p class="lang-en-only">A behavioral pattern emerged from listening data: people were topping their hot dogs beyond expectation. Business case → new cross-category bundle launched with the group's snack brand.</p>
+            <p class="lang-es-only">Un patrón conductual emergió en la data: la gente agregaba toppings a sus hot dogs más allá de lo esperado. Business case → bundle cross-category lanzado con la marca de snacks del grupo.</p>
+            <div class="result lang-en-only">Result: <strong>new SKU bundle</strong> across two group brands</div>
+            <div class="result lang-es-only">Resultado: <strong>nuevo bundle</strong> cross-brand dentro del grupo</div>
+          </div>
+
+          <div class="subcase">
+            <div class="industry lang-en-only">Methodology · Global Rollout</div>
+            <div class="industry lang-es-only">Metodología · Rollout Global</div>
+            <h5 class="lang-en-only">Living Customer Journey Map</h5>
+            <h5 class="lang-es-only">Customer Journey Vivo</h5>
+            <p class="lang-en-only">Built a CJM that updated in real-time. If consumer behavior shifted, the journey shifted. The result: reaching the right audience, in the right channel, at the right moment — not retroactively.</p>
+            <p class="lang-es-only">Construí un CJM que se actualizaba en tiempo real. Si el comportamiento del consumidor cambiaba, el journey cambiaba. Resultado: llegar a la audiencia correcta, en el canal correcto, en el momento correcto — no retroactivamente.</p>
+            <div class="result lang-en-only">Result: <strong>operational CJM</strong> adopted across global markets</div>
+            <div class="result lang-es-only">Resultado: <strong>CJM operacional</strong> adoptado en mercados globales</div>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Social Listening</span>
+          <span class="tag">Methodology Design</span>
+          <span class="tag">CDP Strategy</span>
+          <span class="tag">Loyalty Design</span>
+          <span class="tag">Data Storytelling</span>
+          <span class="tag">Consumer Insights</span>
+          <span class="tag">Global CPG</span>
+          <span class="tag">Innovation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CASE 3: MESCALINA ========== -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-index">
+          2024 — Present
+          <div>CASE STUDY 03 &nbsp;·&nbsp; CURRENT</div>
+        </div>
+        <div>
+          <div class="case-subtitle">Mescalina &nbsp;·&nbsp; Digital Strategy Agency</div>
+          <h3 class="case-title lang-en-only">Turning an agency into <em>a consultancy</em>.</h3>
+          <h3 class="case-title lang-es-only">Convirtiendo una agencia en <em>una consultoría</em>.</h3>
+        </div>
+      </div>
+
+      <div class="case-visual">
+        <span class="placeholder">./assets/projects/mescalina.jpg</span>
+      </div>
+
+      <div class="case-body" style="margin-top:3rem;">
+        <div></div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">Context &amp; Challenge</h4>
+          <h4 class="lang-es-only">Contexto y reto</h4>
+          <p class="lang-en-only">A digital strategy agency ready to evolve from execution-based work into consultative CX + Data solutions.</p>
+          <p class="lang-en-only">My mandate: reposition the company, design new consulting products, and prove data-driven CX can move real business metrics for enterprise clients.</p>
+          <p class="lang-es-only">Una agencia de estrategia digital lista para evolucionar de trabajo basado en ejecución a soluciones consultivas de CX + Data.</p>
+          <p class="lang-es-only">Mi mandato: reposicionar la empresa, diseñar nuevos productos de consultoría, y demostrar que el CX data-driven puede mover métricas reales de negocio para clientes enterprise.</p>
+        </div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">What I did</h4>
+          <h4 class="lang-es-only">Lo que hice</h4>
+          <ul class="lang-en-only">
+            <li>Redefined the service portfolio around CX + Data consulting products</li>
+            <li>Designed new methodologies: Consumer Understanding Strategy · Triggers &amp; Barriers · Insight Audit</li>
+            <li>Led enterprise proposals across pet care, CPG, cinema/entertainment, automotive, home retail</li>
+            <li>Standardized playbooks, briefs and operational frameworks for the data team</li>
+            <li>Architected CX + Data service lines with Salesforce, WhatsApp CRM, CDP integration</li>
+          </ul>
+          <ul class="lang-es-only">
+            <li>Redefiní el portfolio de servicios alrededor de productos consultivos CX + Data</li>
+            <li>Diseñé nuevas metodologías: Consumer Understanding Strategy · Triggers &amp; Barriers · Insight Audit</li>
+            <li>Lideré propuestas enterprise en pet care, CPG, cinema, automotriz, home retail</li>
+            <li>Estandaricé playbooks, briefs y frameworks operacionales del equipo de data</li>
+            <li>Arquitecté líneas de servicio CX + Data con Salesforce, WhatsApp CRM, integración CDP</li>
+          </ul>
+        </div>
+
+        <!-- Mescalina sub-cases -->
+        <div class="subcases">
+          <div class="subcase">
+            <div class="industry lang-en-only">Pet Care Leader · Mexico</div>
+            <div class="industry lang-es-only">Líder de Pet Care · México</div>
+            <h5 class="lang-en-only">Holistic CX Transformation</h5>
+            <h5 class="lang-es-only">Transformación CX Holística</h5>
+            <p class="lang-en-only">~2 year journey: social → planning → data acquisition → Salesforce Marketing Cloud → Loyalty Plan → Salesforce Sales &amp; Service. Full CX model deployed.</p>
+            <p class="lang-es-only">Recorrido de ~2 años: social → planeación → adquisición de data → Salesforce Marketing Cloud → Plan de Lealtad → Salesforce Sales &amp; Service. Modelo CX completo desplegado.</p>
+            <div class="result lang-en-only"><strong>+35%</strong> sustained annual sales growth<br/><strong>+0.5pp</strong> market share</div>
+            <div class="result lang-es-only"><strong>+35%</strong> crecimiento anual sostenido en ventas<br/><strong>+0.5pp</strong> participación de mercado</div>
+          </div>
+
+          <div class="subcase">
+            <div class="industry lang-en-only">Global CPG · Breakfast Foods</div>
+            <div class="industry lang-es-only">CPG Global · Desayuno</div>
+            <h5 class="lang-en-only">Data Unification via CDP</h5>
+            <h5 class="lang-es-only">Unificación de Data vía CDP</h5>
+            <p class="lang-en-only">5+ years of fragmented promotional data, zero consumer understanding. Implemented Epsilon CDP, defined data strategy for past reconciliation + future collection, built ready-to-use segments.</p>
+            <p class="lang-es-only">5+ años de data promocional fragmentada, cero entendimiento del consumidor. Implementé Epsilon CDP, definí estrategia de data para reconciliación pasada + recolección futura, construí segmentos listos para usar.</p>
+            <div class="result lang-en-only"><strong>Efficient CPC</strong> across all media investments · <strong>zero</strong> external data purchases required</div>
+            <div class="result lang-es-only"><strong>CPC eficiente</strong> en todas las inversiones en medios · <strong>cero</strong> compras externas de data requeridas</div>
+          </div>
+
+          <div class="subcase">
+            <div class="industry lang-en-only">Cinema Leader · Arthouse &amp; Events</div>
+            <div class="industry lang-es-only">Líder en Cinema · Arte y Eventos</div>
+            <h5 class="lang-en-only">Cultural Intelligence for Programming</h5>
+            <h5 class="lang-es-only">Inteligencia Cultural para Programación</h5>
+            <p class="lang-en-only">Social listening + niche discovery + cultural decoding to forecast what concerts, series, arthouse films and events would resonate — before the programming decision.</p>
+            <p class="lang-es-only">Social listening + descubrimiento de nichos + decodificación cultural para anticipar qué conciertos, series, películas de arte y eventos resonarían — antes de la decisión de programación.</p>
+            <div class="result lang-en-only">From <strong>hundreds of thousands</strong> to <strong>3M+ tickets/year</strong> in arthouse programming · Positioned as <strong>home of K-Pop screenings</strong> in Mexico</div>
+            <div class="result lang-es-only">De <strong>cientos de miles</strong> a <strong>3M+ boletos/año</strong> en programación de arte · Posicionado como <strong>casa del K-Pop</strong> en México</div>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Consultancy Design</span>
+          <span class="tag">Loyalty Programs</span>
+          <span class="tag">CDP Implementation</span>
+          <span class="tag">Salesforce MC · Sales · Service</span>
+          <span class="tag">WhatsApp CRM</span>
+          <span class="tag">Social Listening</span>
+          <span class="tag">Data Strategy</span>
+          <span class="tag">Enterprise Client Leadership</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CASE 4: SEGUROS MONTERREY NEW YORK LIFE ========== -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-index">
+          2019 — 2021
+          <div>CASE STUDY 04</div>
+        </div>
+        <div>
+          <div class="case-subtitle lang-en-only">Seguros Monterrey New York Life &nbsp;·&nbsp; Insurance (Enterprise)</div>
+          <div class="case-subtitle lang-es-only">Seguros Monterrey New York Life &nbsp;·&nbsp; Seguros (Enterprise)</div>
+          <h3 class="case-title lang-en-only">A CX transformation inside a <em>175-year-old insurer</em>.</h3>
+          <h3 class="case-title lang-es-only">Una transformación CX dentro de una aseguradora <em>de 175 años</em>.</h3>
+        </div>
+      </div>
+
+      <div class="case-visual">
+        <span class="placeholder">./assets/projects/smnyl.jpg</span>
+      </div>
+
+      <div class="case-body" style="margin-top:3rem;">
+        <div></div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">Context &amp; Challenge</h4>
+          <h4 class="lang-es-only">Contexto y reto</h4>
+          <p class="lang-en-only">One of Mexico's largest life insurers starting a digital transformation, beginning with an Adobe Experience Manager implementation and expanding into enterprise-wide CX.</p>
+          <p class="lang-en-only">Challenge: define the enterprise CX strategy inside a traditionally product-centric organization — and prove CX actions could move business metrics like churn.</p>
+          <p class="lang-es-only">Una de las aseguradoras de vida más grandes de México iniciando una transformación digital, comenzando con implementación de Adobe Experience Manager y expandiéndose a CX enterprise.</p>
+          <p class="lang-es-only">Reto: definir la estrategia CX enterprise dentro de una organización tradicionalmente product-centric — y demostrar que las acciones CX podían mover métricas de negocio como churn.</p>
+        </div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">What I did</h4>
+          <h4 class="lang-es-only">Lo que hice</h4>
+          <p class="lang-en-only" style="color:var(--text);font-size:0.82rem;margin-bottom:0.5rem;"><strong>Phase 1 — Foundations</strong></p>
+          <ul class="lang-en-only">
+            <li>Built AEM business case &amp; drove partial implementation</li>
+            <li>Defined CX measurement frameworks: NPS, CSAT, CES</li>
+            <li>Directed MySMNYL — policy-holder app for 2M+ users</li>
+            <li>Redesigned public website with UX/UI best practices</li>
+            <li>Positioned the data practice internally</li>
+          </ul>
+          <p class="lang-en-only" style="color:var(--text);font-size:0.82rem;margin:1rem 0 0.5rem;"><strong>Phase 2 — Retention &amp; Loyalty</strong></p>
+          <ul class="lang-en-only">
+            <li>Detected main payment complaints in Salesforce Service</li>
+            <li>Strengthened communication strategy: messaging, cadence, triggers</li>
+            <li>Designed retention &amp; loyalty actions tied directly to complaint patterns</li>
+          </ul>
+          <p class="lang-es-only" style="color:var(--text);font-size:0.82rem;margin-bottom:0.5rem;"><strong>Fase 1 — Fundamentos</strong></p>
+          <ul class="lang-es-only">
+            <li>Construí el business case de AEM e impulsé implementación parcial</li>
+            <li>Definí frameworks de medición CX: NPS, CSAT, CES</li>
+            <li>Dirigí MySMNYL — app de consulta de póliza para 2M+ usuarios</li>
+            <li>Rediseñé el sitio web público con mejores prácticas UX/UI</li>
+            <li>Posicioné la práctica de data a nivel interno</li>
+          </ul>
+          <p class="lang-es-only" style="color:var(--text);font-size:0.82rem;margin:1rem 0 0.5rem;"><strong>Fase 2 — Retención y Lealtad</strong></p>
+          <ul class="lang-es-only">
+            <li>Detecté los main complaints de pago en Salesforce Service</li>
+            <li>Robustecí la estrategia de comunicación: mensaje, frecuencia, triggers</li>
+            <li>Diseñé acciones de retención y lealtad atadas directamente a patrones de complaint</li>
+          </ul>
+        </div>
+
+        <div class="impact-stats">
+          <div class="stat"><div class="stat-num">−3pp</div><div class="stat-label lang-en-only">Churn rate reduction</div><div class="stat-label lang-es-only">Reducción de churn rate</div></div>
+          <div class="stat"><div class="stat-num">70%+</div><div class="stat-label lang-en-only">MySMNYL adoption rate</div><div class="stat-label lang-es-only">Adopción MySMNYL</div></div>
+          <div class="stat"><div class="stat-num">2M+</div><div class="stat-label lang-en-only">Policy holders served</div><div class="stat-label lang-es-only">Asegurados atendidos</div></div>
+          <div class="stat"><div class="stat-num">~12</div><div class="stat-label lang-en-only">Months to impact</div><div class="stat-label lang-es-only">Meses a impacto</div></div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Enterprise CX</span>
+          <span class="tag">Salesforce Service</span>
+          <span class="tag">Adobe Experience Manager</span>
+          <span class="tag">Loyalty &amp; Retention</span>
+          <span class="tag">Journey Mapping</span>
+          <span class="tag">NPS · CSAT · CES</span>
+          <span class="tag">VoC Programs</span>
+          <span class="tag">Insurance</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CASE 5: CHEAF ========== -->
+    <div class="case">
+      <div class="case-header">
+        <div class="case-index">
+          2021 — 2023
+          <div>CASE STUDY 05</div>
+        </div>
+        <div>
+          <div class="case-subtitle lang-en-only">Cheaf &nbsp;·&nbsp; FoodTech Startup &nbsp;·&nbsp; Circular Economy</div>
+          <div class="case-subtitle lang-es-only">Cheaf &nbsp;·&nbsp; Startup FoodTech &nbsp;·&nbsp; Economía Circular</div>
+          <h3 class="case-title lang-en-only">Design meets <em>circular economy</em>.</h3>
+          <h3 class="case-title lang-es-only">Diseño se encuentra con <em>la economía circular</em>.</h3>
+        </div>
+      </div>
+
+      <div class="case-visual">
+        <span class="placeholder">./assets/projects/cheaf.jpg</span>
+      </div>
+
+      <div class="case-body" style="margin-top:3rem;">
+        <div></div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">Context &amp; Challenge</h4>
+          <h4 class="lang-es-only">Contexto y reto</h4>
+          <p class="lang-en-only">A FoodTech startup fighting food waste — letting users rescue surplus from stores and restaurants at a fraction of the price, while businesses recover production costs.</p>
+          <p class="lang-en-only">Challenge: build a product experience that works for both sides of the marketplace, and scale it across geographies including an Argentina market launch.</p>
+          <p class="lang-es-only">Un startup FoodTech combatiendo el desperdicio de comida — permitiendo a usuarios rescatar excedentes de tiendas y restaurantes a una fracción del precio, mientras los negocios recuperan costos de producción.</p>
+          <p class="lang-es-only">Reto: construir una experiencia de producto que funcione para ambos lados del marketplace, y escalarla a nuevas geografías incluyendo el lanzamiento en Argentina.</p>
+        </div>
+
+        <div class="case-block">
+          <h4 class="lang-en-only">What I did</h4>
+          <h4 class="lang-es-only">Lo que hice</h4>
+          <ul class="lang-en-only">
+            <li>Built the customer-first framework from scratch</li>
+            <li>Led end-to-end product design: wireframes to hi-fi prototypes</li>
+            <li>Defined user stories, acceptance criteria &amp; business rules</li>
+            <li>Designed checkout for Argentina market expansion</li>
+            <li>Email validation + location/city/neighborhood selection (Places API)</li>
+            <li>Restaurant ranking logic + return flows + edge-case journeys</li>
+            <li>Algorithm-built bundle design for retail surplus</li>
+            <li>Ran continuous UX research and A/B testing cycles</li>
+          </ul>
+          <ul class="lang-es-only">
+            <li>Construí el framework customer-first desde cero</li>
+            <li>Lideré diseño de producto end-to-end: wireframes a prototipos hi-fi</li>
+            <li>Definí user stories, criterios de aceptación y reglas de negocio</li>
+            <li>Diseñé el checkout para la expansión a Argentina</li>
+            <li>Validación de correo + selección de ciudad/colonia (Places API)</li>
+            <li>Lógica de ranking de restaurantes + flujos de devolución + edge cases</li>
+            <li>Diseño de bundles construidos por algoritmo para merma retail</li>
+            <li>Ciclos continuos de UX research y A/B testing</li>
+          </ul>
+        </div>
+
+        <div class="impact-stats">
+          <div class="stat"><div class="stat-num">150K+</div><div class="stat-label lang-en-only">Meals rescued</div><div class="stat-label lang-es-only">Comidas rescatadas</div></div>
+          <div class="stat"><div class="stat-num">250t</div><div class="stat-label lang-en-only">Food recovered</div><div class="stat-label lang-es-only">Alimento recuperado</div></div>
+          <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label lang-en-only">App rating</div><div class="stat-label lang-es-only">Rating app</div></div>
+          <div class="stat"><div class="stat-num">~$1.2M</div><div class="stat-label lang-en-only">Monthly revenue projected</div><div class="stat-label lang-es-only">Revenue mensual proyectado</div></div>
+          <div class="stat"><div class="stat-num">~70%</div><div class="stat-label lang-en-only">Gen Z audience</div><div class="stat-label lang-es-only">Audiencia Gen Z</div></div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Product Design</span>
+          <span class="tag">UX Research</span>
+          <span class="tag">A/B Testing</span>
+          <span class="tag">Startup</span>
+          <span class="tag">Circular Economy</span>
+          <span class="tag">Marketplace</span>
+          <span class="tag">Product Definition</span>
+          <span class="tag">Acceptance Criteria</span>
+          <span class="tag">Places API</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================== COMPACT PROJECTS ================== -->
+<section id="compact-work">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-en-only">04 / Additional Work</span>
+      <span class="lang-es-only">04 / Otros proyectos</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-en-only">More <em>work that moved metrics</em>.</span>
+      <span class="lang-es-only">Más <em>trabajo que movió métricas</em>.</span>
+    </h2>
+
+    <div class="compact-grid">
+      <div class="compact-card">
+        <div class="compact-meta">2024 &nbsp;·&nbsp; Insurance</div>
+        <h3>Seguros El Potosí</h3>
+        <p class="subtitle lang-en-only">Internal platform redesign — policies, quotes, endorsements.</p>
+        <p class="subtitle lang-es-only">Rediseño de plataforma interna — pólizas, cotizaciones, endosos.</p>
+        <ul class="lang-en-only">
+          <li><strong>28+</strong> UX flows redesigned</li>
+          <li><strong>60%</strong> reduction in steps across key journeys</li>
+          <li>Policy management: <strong>20 clicks → 4 clicks</strong></li>
+          <li><strong>92%</strong> accuracy on automated endorsements</li>
+          <li><strong>4.8/5</strong> satisfaction on transactional comms</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li><strong>28+</strong> flujos UX rediseñados</li>
+          <li><strong>60%</strong> reducción de pasos en journeys clave</li>
+          <li>Gestión de póliza: <strong>20 clics → 4 clics</strong></li>
+          <li><strong>92%</strong> precisión en endosos automatizados</li>
+          <li><strong>4.8/5</strong> satisfacción en comunicaciones transaccionales</li>
+        </ul>
+        <div class="tags" style="margin-top:1rem;border-top:none;padding-top:0;">
+          <span class="tag">UX / Service Design</span>
+          <span class="tag">Process Simplification</span>
+          <span class="tag">Insurance</span>
+        </div>
+      </div>
+
+      <div class="compact-card">
+        <div class="compact-meta">2017 &nbsp;—&nbsp; 2019 &nbsp;·&nbsp; Fintech</div>
+        <h3>Up Sí Vale</h3>
+        <p class="subtitle lang-en-only">Lead UX/CX · Digital Experience Team + Senior Product Designer.</p>
+        <p class="subtitle lang-es-only">Lead UX/CX · Digital Experience Team + Senior Product Designer.</p>
+        <ul class="lang-en-only">
+          <li>Mobile app redesign: <strong>4M users</strong></li>
+          <li>Marketing site: <strong>3K daily visits</strong></li>
+          <li>Up Business expense mgmt: <strong>300K users</strong></li>
+          <li>Inteligas fleet software: <strong>28K users</strong></li>
+          <li>Up France benefits: <strong>12K monthly</strong></li>
+          <li>Built &amp; scaled the product design team</li>
+        </ul>
+        <ul class="lang-es-only">
+          <li>Rediseño app móvil: <strong>4M usuarios</strong></li>
+          <li>Sitio marketing: <strong>3K visitas diarias</strong></li>
+          <li>Up Business gestión gastos: <strong>300K usuarios</strong></li>
+          <li>Inteligas flotillas: <strong>28K usuarios</strong></li>
+          <li>Up France beneficios: <strong>12K mensuales</strong></li>
+          <li>Construí y escalé el equipo de product design</li>
+        </ul>
+        <div class="tags" style="margin-top:1rem;border-top:none;padding-top:0;">
+          <span class="tag">Fintech</span>
+          <span class="tag">Design System</span>
+          <span class="tag">Team Leadership</span>
+          <span class="tag">Multi-platform</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== VENTURES ================== -->
+<section class="ventures" id="ventures">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-en-only">05 / Ventures</span>
+      <span class="lang-es-only">05 / Ventures</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-en-only">Things I'm <em>building</em>.</span>
+      <span class="lang-es-only">Cosas que <em>estoy construyendo</em>.</span>
+    </h2>
+
+    <div class="venture">
+      <div class="venture-left">
+        <div class="venture-tag lang-en-only">Founder · Strategic Lead</div>
+        <div class="venture-tag lang-es-only">Founder · Strategic Lead</div>
+        <h3>Coven</h3>
+        <div class="venture-tagline lang-en-only">Data → Experience → Results.</div>
+        <div class="venture-tagline lang-es-only">Data → Experiencia → Resultados.</div>
+      </div>
+      <div class="venture-right">
+        <p class="lang-en-only">A consultancy/studio built to turn data into decisions, experiences, and business outcomes — not dashboards and decoration. Hybrid between strategic consulting, service design, analytics, data integration, and execution.</p>
+        <p class="lang-en-only">I designed the positioning, service architecture and commercial model. Four frontlines: <em>Data Strategy &amp; Integration</em>, <em>Consumer Strategy</em>, <em>Experience Management</em>, <em>Business Intelligence &amp; Digital Production</em>. Flexible engagement formats — from continuous consulting to embedded pods to productized IP.</p>
+        <p class="lang-en-only">Built to break four industry pain points: siloed data, generic CX playbooks, slow &amp; expensive consulting, fragmented vendor ecosystems.</p>
+        <p class="lang-es-only">Consultora/estudio construida para convertir data en decisiones, experiencias y resultados de negocio — no dashboards decorativos. Híbrida entre consultoría estratégica, service design, analytics, integración de data y ejecución.</p>
+        <p class="lang-es-only">Diseñé el posicionamiento, arquitectura de servicios y modelo comercial. Cuatro frentes: <em>Data Strategy &amp; Integration</em>, <em>Consumer Strategy</em>, <em>Experience Management</em>, <em>Business Intelligence &amp; Digital Production</em>. Formatos flexibles de engagement — consultoría continua, pods embebidos, IP productizada.</p>
+        <p class="lang-es-only">Construida para romper cuatro pain points de la industria: datos aislados, playbooks genéricos de CX, consultoría lenta y cara, ecosistemas de proveedores fragmentados.</p>
+        <div class="frameworks">
+          <span class="tag">Founder</span>
+          <span class="tag">Consulting Design</span>
+          <span class="tag">Service Architecture</span>
+          <span class="tag">CX + Data + Product</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="venture">
+      <div class="venture-left">
+        <div class="venture-tag lang-en-only">Founder · Methodology Architect</div>
+        <div class="venture-tag lang-es-only">Founder · Methodology Architect</div>
+        <h3>Noisia</h3>
+        <div class="venture-tagline lang-en-only">Social Intelligence Architects.</div>
+        <div class="venture-tagline lang-es-only">Social Intelligence Architects.</div>
+      </div>
+      <div class="venture-right">
+        <p class="lang-en-only">A tool-agnostic Social Intelligence firm. Not a SaaS, not a traditional agency, not a tool reseller. The thesis: between 70–85% of listening tool output is noise without the right methodological architecture on top.</p>
+        <p class="lang-en-only">I designed the positioning, commercial model (3-tier service structure from Foundation to Strategy), and the methodology system itself — six proprietary frameworks grounded in psychology, anthropology, behavioral economics and sociology.</p>
+        <p class="lang-es-only">Firma tool-agnostic de Social Intelligence. No es un SaaS, no es una agencia tradicional, no es reseller de herramientas. La tesis: entre el 70–85% del output de herramientas de listening es ruido sin la arquitectura metodológica correcta encima.</p>
+        <p class="lang-es-only">Diseñé el posicionamiento, modelo comercial (estructura de 3 niveles de Foundation a Strategy) y el sistema metodológico en sí — seis frameworks propietarios fundamentados en psicología, antropología, economía conductual y sociología.</p>
+        <div class="frameworks">
+          <span class="tag">Triggers &amp; Barriers</span>
+          <span class="tag">Journey Friction Mapping</span>
+          <span class="tag">Value Perception Matrix</span>
+          <span class="tag">Influence Architecture</span>
+          <span class="tag">Cultural Codes Decoding</span>
+          <span class="tag">Decision Velocity</span>
+        </div>
+        <p style="margin-top:1.5rem;font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim);letter-spacing:0.05em;">
+          <span class="lang-en-only">Methodology model impact reported: <strong style="color:var(--accent);">+2pp market share</strong> · <strong style="color:var(--accent);">$400K</strong> in insight-driven product sales · <strong style="color:var(--accent);">−35%</strong> media waste · <strong style="color:var(--accent);">−32%</strong> negative mentions · <strong style="color:var(--accent);">+27%</strong> faster response time.</span>
+          <span class="lang-es-only">Impacto reportado del modelo: <strong style="color:var(--accent);">+2pp market share</strong> · <strong style="color:var(--accent);">$400K</strong> en ventas driven-by-insights · <strong style="color:var(--accent);">−35%</strong> media waste · <strong style="color:var(--accent);">−32%</strong> menciones negativas · <strong style="color:var(--accent);">+27%</strong> tiempo de respuesta.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== CAPABILITIES DEEP-DIVE ================== -->
+<section class="capabilities">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-en-only">06 / Deep Expertise</span>
+      <span class="lang-es-only">06 / Expertise profundo</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-en-only">Beyond the CV — <em>what I actually bring</em>.</span>
+      <span class="lang-es-only">Más allá del CV — <em>lo que realmente aporto</em>.</span>
+    </h2>
+
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="cap-num">01</div>
+        <h4 class="lang-en-only">Product definition from zero</h4>
+        <h4 class="lang-es-only">Definición de producto desde cero</h4>
+        <p class="lang-en-only">Not just UX or UI. I've defined apps from scratch in fintech, foodtech and insurance — user stories, acceptance criteria, business rules, and tech stack selection. I don't code, but I know exactly which technology fits which challenge.</p>
+        <p class="lang-es-only">No solo UX o UI. He definido apps desde cero en fintech, foodtech y seguros — user stories, criterios de aceptación, reglas de negocio y selección de stack tecnológico. No desarrollo, pero sé exactamente qué tecnología resuelve qué reto.</p>
+      </div>
+
+      <div class="cap">
+        <div class="cap-num">02</div>
+        <h4 class="lang-en-only">Loyalty programs, end to end</h4>
+        <h4 class="lang-es-only">Programas de lealtad end-to-end</h4>
+        <p class="lang-en-only">From concept to program economics. Mechanics, tiers, earning/burning logic, financial modeling. Designed complete programs — not just the brand layer on top of someone else's math.</p>
+        <p class="lang-es-only">Desde el concepto hasta la economía del programa. Mecánicas, tiers, lógica de ganancia/redención, modelado financiero. Programas completos diseñados — no solo la capa de marca encima de la matemática de alguien más.</p>
+      </div>
+
+      <div class="cap">
+        <div class="cap-num">03</div>
+        <h4 class="lang-en-only">Data strategy — both sides of the table</h4>
+        <h4 class="lang-es-only">Data strategy — en ambos lados de la mesa</h4>
+        <p class="lang-en-only">Strategic consulting <em>and</em> hands-on implementation. I've led CDP deployments shoulder-to-shoulder with consulting teams, connecting structured and unstructured sources, building the segmentation logic on top.</p>
+        <p class="lang-es-only">Consultoría estratégica <em>y</em> implementación hands-on. He liderado despliegues de CDP hombro con hombro con equipos consultores, conectando fuentes estructuradas y no estructuradas, construyendo la lógica de segmentación encima.</p>
+      </div>
+
+      <div class="cap">
+        <div class="cap-num">04</div>
+        <h4 class="lang-en-only">Data storytelling in dashboards</h4>
+        <h4 class="lang-es-only">Data storytelling en dashboards</h4>
+        <p class="lang-en-only">Dashboards that actually get used. I treat data as narrative, not decoration — building reporting structures that lead decision-makers from "what happened" to "what we should do".</p>
+        <p class="lang-es-only">Dashboards que sí se usan. Trato la data como narrativa, no como decoración — construyendo estructuras de reporting que llevan a los tomadores de decisiones desde "qué pasó" hasta "qué deberíamos hacer".</p>
+      </div>
+
+      <div class="cap">
+        <div class="cap-num">05</div>
+        <h4 class="lang-en-only">Consumer understanding methodologies</h4>
+        <h4 class="lang-es-only">Metodologías para entender al consumidor</h4>
+        <p class="lang-en-only">I build frameworks, not just reports. Total Listening, Digital Journey Map, Triggers &amp; Barriers, Cultural Codes Decoding — proprietary methodologies I've designed and applied to global CPG, insurance, cinema, pet care and more.</p>
+        <p class="lang-es-only">Construyo frameworks, no solo reportes. Total Listening, Digital Journey Map, Triggers &amp; Barriers, Cultural Codes Decoding — metodologías propietarias que he diseñado y aplicado en CPG global, seguros, cinema, pet care y más.</p>
+      </div>
+
+      <div class="cap">
+        <div class="cap-num">06</div>
+        <h4 class="lang-en-only">Figma, at expert level</h4>
+        <h4 class="lang-es-only">Figma a nivel experto</h4>
+        <p class="lang-en-only">Over a decade of hands-on design. Production-grade design systems, variants, components, auto-layouts, prototypes. I still design — I just also do everything else.</p>
+        <p class="lang-es-only">Más de una década de diseño hands-on. Design systems production-grade, variants, componentes, auto-layouts, prototipos. Sigo diseñando — solo que además hago todo lo demás.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== EXPERIENCE TIMELINE ================== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">
+      <span class="lang-en-only">07 / Full Experience</span>
+      <span class="lang-es-only">07 / Experiencia completa</span>
+    </div>
+    <h2 class="section-title">
+      <span class="lang-en-only">The <em>full timeline</em>.</span>
+      <span class="lang-es-only">La <em>trayectoria completa</em>.</span>
+    </h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Apr 2024 — Present</div>
+        <div class="tl-role">CX Director</div>
+        <div class="tl-org">Mescalina · CDMX</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Oct 2023 — Aug 2025</div>
+        <div class="tl-role">Digital Experience &amp; CX Manager</div>
+        <div class="tl-org">Join The Planet · Miami (Remote)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">May 2021 — Apr 2024</div>
+        <div class="tl-role">Global Strategy Lead &amp; Innovation</div>
+        <div class="tl-org">Findasense · Mexico</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jan 2021 — Oct 2023</div>
+        <div class="tl-role">Head of User Experience &amp; CX</div>
+        <div class="tl-org">Cheaf · Mexico City</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2019 — May 2021</div>
+        <div class="tl-role">Lead of CX &amp; Service Design</div>
+        <div class="tl-org">Seguros Monterrey NYL · Mexico City</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Apr 2018 — Sep 2019</div>
+        <div class="tl-role">Lead of UX &amp; CX · Digital Experience</div>
+        <div class="tl-org">Up Sí Vale · Mexico</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 2017 — Apr 2018</div>
+        <div class="tl-role">Senior Product Designer</div>
+        <div class="tl-org">Up Sí Vale · Mexico City</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 2017 — Mar 2019</div>
+        <div class="tl-role">CX Leader</div>
+        <div class="tl-org">dots · Digital Agency</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jun 2016 — Feb 2017</div>
+        <div class="tl-role">UX Lead</div>
+        <div class="tl-org">Admm Creativa · Mexico City</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Feb 2015 — Mar 2016</div>
+        <div class="tl-role">UX Designer</div>
+        <div class="tl-org">Deloitte · Mexico City</div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;padding-top:3rem;border-top:1px solid var(--border);">
+      <div>
+        <div class="mono" style="color:var(--accent);margin-bottom:0.5rem;">
+          <span class="lang-en-only">Education</span>
+          <span class="lang-es-only">Educación</span>
+        </div>
+        <div style="font-family:var(--font-display);font-style:italic;font-size:1.05rem;margin-bottom:0.25rem;">IE Business School</div>
+        <div style="color:var(--text-muted);font-size:0.88rem;">CX Program · 2019</div>
+      </div>
+      <div>
+        <div class="mono" style="color:var(--accent);margin-bottom:0.5rem;">&nbsp;</div>
+        <div style="font-family:var(--font-display);font-style:italic;font-size:1.05rem;margin-bottom:0.25rem;">NABA Milano</div>
+        <div style="color:var(--text-muted);font-size:0.88rem;">Art Studies · 2012–2016</div>
+      </div>
+      <div>
+        <div class="mono" style="color:var(--accent);margin-bottom:0.5rem;">&nbsp;</div>
+        <div style="font-family:var(--font-display);font-style:italic;font-size:1.05rem;margin-bottom:0.25rem;">Universidad del Valle de México</div>
+        <div style="color:var(--text-muted);font-size:0.88rem;">Web &amp; Multimedia Design · 2012–2016</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== CONTACT ================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;display:inline-flex;">
+      <span class="lang-en-only">08 / Contact</span>
+      <span class="lang-es-only">08 / Contacto</span>
+    </div>
+    <h2 class="lang-en-only">Let's <em>talk</em>.</h2>
+    <h2 class="lang-es-only">Hablemos <em>.</em></h2>
+    <p style="max-width:45ch;margin:0 auto 3rem;color:var(--text-muted);font-size:1.1rem;font-family:var(--font-display);font-style:italic;font-weight:300;">
+      <span class="lang-en-only">Open to director-level roles, consulting engagements and advisory work in CX, Product, and Data.</span>
+      <span class="lang-es-only">Abierto a roles a nivel director, consultorías y advisory en CX, Producto y Data.</span>
+    </p>
+    <a href="mailto:brandhon_oropeza@hotmail.com" class="contact-email">brandhon_oropeza@hotmail.com</a>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/brandhon-oropeza-b81671121/" target="_blank" rel="noopener">LinkedIn →</a>
+      <a href="tel:+5215510524934">+52 1 55 1052 4934</a>
+      <a href="./assets/cv.pdf" download>
+        <span class="lang-en-only">Download CV →</span>
+        <span class="lang-es-only">Descargar CV →</span>
+      </a>
+      <span>CDMX, MX</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Brandhon Oropeza</div>
+  <div class="lang-en-only">Designed &amp; built by the author.</div>
+  <div class="lang-es-only">Diseñado y construido por el autor.</div>
+</footer>
+
+<script>
+  // ===== Language toggle =====
+  const html = document.documentElement;
+  const btnEN = document.getElementById('btn-en');
+  const btnES = document.getElementById('btn-es');
+
+  function setLang(lang) {
+    html.classList.remove('lang-en', 'lang-es');
+    html.classList.add('lang-' + lang);
+    html.setAttribute('lang', lang);
+    btnEN.classList.toggle('active', lang === 'en');
+    btnES.classList.toggle('active', lang === 'es');
+    try { localStorage.setItem('bo_lang', lang); } catch(e) {}
+  }
+
+  btnEN.addEventListener('click', () => setLang('en'));
+  btnES.addEventListener('click', () => setLang('es'));
+
+  // Restore saved preference
+  try {
+    const saved = localStorage.getItem('bo_lang');
+    if (saved === 'es' || saved === 'en') setLang(saved);
+    else {
+      // Auto-detect from browser
+      const browserLang = (navigator.language || 'en').toLowerCase();
+      if (browserLang.startsWith('es')) setLang('es');
+    }
+  } catch(e) {}
+
+  // ===== Nav scroll state =====
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ===== Reveal on scroll =====
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.case, .subcase, .stat, .expertise-card, .compact-card, .venture, .cap, .tl-item').forEach(el => {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  }
+</script>
+
+</body>
+</html>
